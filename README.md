@@ -1,5 +1,3 @@
-// ...existing code...
-
 # DataGadgets — USD Sales Aggregation (2024-01-21)
 
 ## Table of Contents
@@ -50,7 +48,6 @@ A small helper used to generate the sample dataset is available as [`create_dumm
 | 3     | 117.99 | GBP      | 0.788326      | 93.014529  |
 | 4     | 624.00 | USD      | 1.000000      | 624.000000 |
 
-Example (first 5 rows after conversion) shown in notebook: [`orders` preview and conversions](notebooks/notebook.ipynb).
 
 ## Technologies Used
 
@@ -61,32 +58,26 @@ Example (first 5 rows after conversion) shown in notebook: [`orders` preview and
 
 ## Project Structure
 
-- [README.md](README.md) — this file
-- [data/generate_data.ipynb](data/generate_data.ipynb) — helper to generate `orders-2024-01-21.csv`; contains [`create_dummy_data`](data/generate_data.ipynb)
-- [data/orders-2024-01-21.csv](data/orders-2024-01-21.csv) — dataset of orders for 2024-01-21
-- [images/image.jpg](images/image.jpg), [images/img_currencylayer_dashboard.png](images/img_currencylayer_dashboard.png), [images/img_env_vars.gif](images/img_env_vars.gif) — media used in the notebook/README
-- [notebooks/notebook.ipynb](notebooks/notebook.ipynb) — analysis notebook that performs the conversion and aggregation (defines `orders` and computes `total_usd_sales`)
-
+```
+├── data/
+│   ├── generate_data.ipynb
+│   └── orders-2024-01-21.csv
+├── images/
+│   ├── image.jpg
+│   ├── img_currencylayer_dashboard.png
+│   └── img_env_vars.gif
+├── notebooks/
+│   └── notebook.ipynb
+├── README.md                 # Project documentation
+```
 ## Results & Insights
 
+- A Python script that incorporates an API call to convert various currencies to USD rates.
 - The notebook computes `amount_usd` per order and then the sum.
-- Total USD sales computed in the notebook: **326,864.39599246805 USD** (see [notebooks/notebook.ipynb](notebooks/notebook.ipynb) for calculation).
-
-Quick formula used:
-
-$$
-\text{amount\_usd} = \text{amount} \times \text{exchange\_rate}
-$$
-
-and
-
-$$
-\text{total\_usd\_sales} = \sum \text{amount\_usd}
-$$
+- Total USD sales computed in the notebook: **326,864.39599246805 USD**
 
 ## Future Work
 
-- Add robust error handling for API failures and missing rates.
 - Cache or persist exchange rates to avoid repeated API calls.
 - Support more currencies and batch date ranges.
 - Add unit tests to validate conversions and rounding.
@@ -95,15 +86,11 @@ $$
 ## Acknowledgement
 
 - Exchange rates via VAT Comply API: https://www.vatcomply.com/documentation#rates
-- Dataset generator and example notebook included in this repo.
+- Problem statements and/or datasets in this project were sourced from DataCamp real-world projects.
 
 ## Contact
 
-Maintainer: DataGadgets analytics team  
-Project files and examples:
+**Reynaldo III Castillo**
 
-- Notebook: [notebooks/notebook.ipynb](notebooks/notebook.ipynb)
-- Data: [data/orders-2024-01-21.csv](data/orders-2024-01-21.csv)
-- Script to regenerate sample data: [data/generate_data.ipynb](data/generate_data.ipynb)
-
-// ...existing code...
+- **Email:** reynaldoiii.castillo@gmail.com
+- **LinkedIn:** [linked.com/reynaldo-iii-castillo](https://www.linkedin.com/in/reynaldo-iii-castillo-975120303)
